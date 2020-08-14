@@ -1,0 +1,611 @@
+/*Mesa*/
+.principalMesa {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+/*Partida*/
+.partida {
+    top: 0;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    border-bottom: 10px ridge white;
+}
+/*CuadroEnvites*/
+.cuadroEnvites {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    width: 10%;
+    background-color: black;
+    color: white;
+    border: 5px ridge #96623d;
+}
+#mostrarCuadro {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    cursor: auto;
+    width: 15%;
+    height: 10%;
+}
+/*Puntos Partida*/
+.puntosPartida {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 21.5%;
+    height: 30%;
+}
+/*Crear Tabla*/
+.puntosPartida > div {
+    position: absolute;
+    height: 25%;
+    background-color: black;
+    border: 5px ridge #96623d;
+}
+.puntosPuntosPartida {
+    width: 25%;
+    top: 25%;
+}
+.juegosPuntosPartida {
+    width: 25%;
+    top: 50%;
+}
+.vacasPuntosPartida {
+    width: 25%;
+    bottom: 0;
+}
+.equipoa {
+    width: 37.5%;
+    left: 25%;
+}
+.equipoa > span {
+    font-size: 0.67em;
+}
+.equipoa > span:first-child {
+    border-bottom: 5px ridge #96623d;
+}
+.equipob {
+    width: 37.5%;
+    right: 0;
+}
+.equipob > span {
+    font-size: 0.67em;
+}
+.equipob > span:first-child {
+    border-bottom: 5px ridge #96623d;
+}
+.puntosa {
+    width: 37.5%;
+    top: 25%;
+    left: 25%;
+}
+.juegosa {
+    width: 37.5%;
+    top: 50%;
+    left: 25%;
+}
+.vacasa {
+    width: 37.5%;
+    bottom: 0;
+    left: 25%;
+}
+.puntosb {
+    width: 37.5%;
+    top: 25%;
+    right: 0;
+}
+.juegosb {
+    width: 37.5%;
+    top: 50%;
+    right: 0;
+}
+.vacasb {
+    width: 37.5%;
+    bottom: 0;
+    right: 0;
+}
+/*Usuarios*/
+.bloqueUsu {
+    width: 9%;
+    height: 25%;
+}
+.bloqueUsu > img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 80%;
+    border-radius: 50%;
+}
+.bloqueUsu > div {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+}
+/*Posicionamiento*/
+.compannero {
+    position: absolute;
+    top: 0;
+    left: 46%;
+}
+.rivalDer {
+    position: absolute;
+    right: 12.5%;
+    bottom: 27.5%;
+}
+.rivalIzq {
+    position: absolute;
+    left: 12.5%;
+    bottom: 27.5%;
+}
+/*Bocadillos*/
+.bocadillo {
+    position: absolute;
+    width: 9%;
+    height: 8%;
+    right: 0;
+}
+.globo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+}
+.piquitoIzq {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 4%;
+    bottom: 8%;
+    border-bottom: 25px solid white;
+    border-right: 25px solid transparent;
+}
+.piquitoDer {
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: 4%;
+    bottom: 8%;
+    border-bottom: 25px solid white;
+    border-left: 25px solid transparent;
+}
+.bocataCompi {
+    top: 0;
+    left: 55%;
+}
+.bocataRivalDer {
+    bottom: 44.5%;
+    right: 3.5%;
+}
+.bocataRivalIzq {
+    bottom: 44.5%;
+    left: 3.5%;
+}
+/*Tapete*/
+.mesaJuego {
+    width: 55%;
+    height: 75%;
+    background-image: url("/Mustruo/media/fondo-madera.png");
+    /*background-image: linear-gradient(to top, #014116, #016322);*/
+    border-radius: 2%;
+    position: absolute;
+    left: 22.5%;
+    bottom: 0;
+}
+.tapete {
+    position: absolute;
+    background-color: #004d1a;
+    border-radius: 2%;
+    width: 70%;
+    height: 70%;
+    top: 15%;
+    left: 15%;
+}
+/*Mano*/
+.mano {
+    position: absolute;
+    width: 5%;
+    height: 15%;
+    transform: rotate(90deg);
+    border-radius: 7px;
+}
+.manoRivalDer {
+    bottom: 0;
+    right: 10%;
+}
+.manoRivalIzq {
+    top: 0;
+    left: 10%;
+}
+.manoCompi {
+    top: 0;
+    right: 10%;
+}
+.manoUsuario {
+    bottom: 0;
+    left: 10%;
+}
+/*Cartas*/
+.cartasHorizontal {
+    display: flex;
+    justify-content: space-between;
+}
+.cartasHorizontal > img {
+    width: 22.5%;
+    height: 75%;
+    border-radius: 10px;
+}
+.cartasVertical {
+    display: flex;
+    flex-direction: column;
+}
+.cartasVertical > img {
+    width: 70%;
+    height: 60%;
+    border-radius: 10px;
+}
+.cartasVertical > img:nth-child(4n+1) {
+    position: absolute;
+    top: 13.33%;
+}
+.cartasVertical > img:nth-child(4n+2) {
+    position: absolute;
+    top: 26.66%;
+}
+.cartasVertical > img:nth-child(4n+3) {
+    position: absolute;
+    top: 40%;
+}
+.subirCarta {
+    align-self: flex-start;
+}
+/*Posicon Cartas*/
+.misCartas {
+    width: 50%;
+    height: 42.5%;
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    align-items: flex-end;
+}
+.compiCartas {
+    width: 50%;
+    height: 42.5%;
+    position: absolute;
+    top: 0;
+    left: 25%;
+}
+.rivalizqCartas {
+    bottom: 22.5%;
+    width: 17.5%;
+    height: 55%;
+    position: absolute;
+}
+.rivalderCartas {
+    right: 0;
+    bottom: 22.5%;
+    width: 17.5%;
+    height: 55%;
+    position: absolute;
+    align-items: flex-end;
+}
+/*Descartes*/
+.posDescartes {
+    position: absolute;
+    width: 25%;
+    height: 15%;
+    top: 42.5%;
+    left: 37.5%;
+    z-index: 5;
+}
+.posDescartes > button {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    top: 0;
+}
+.posDescartes > span {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    bottom: 0;
+    font-size: 50%;
+}
+/*Texto Tapete*/
+.textoTapete {
+    position: absolute;
+    width: 35%;
+    height: 20%;
+    top: 40%;
+    left: 32.5%;
+    font-size: 300%;
+
+}
+.pequennoTapete {
+    border-radius: 7px;
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    top: 10%;
+    background-color: white;
+    color: #004d1a;
+    font-size: 50%;
+}
+/*Reloj*/
+.reloj {
+    width: 4%;
+    background-color: black;
+    color: white;
+    border: 5px solid #96623d;
+    font-size: 190%;
+    border-radius: 50%;
+    position: absolute;
+    right: 27%;
+    top: 0;
+}
+/*Interaccion*/
+.interaccion {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 22.5%;
+}
+/*Mus-No Mus// Quiero-No quiero*/
+.opcionUno {
+    position: absolute;
+    width: 50%;
+}
+.opcionDos {
+    position: absolute;
+    width: 50%;
+    right: 0;
+}
+/*No hay envite*/
+#menos {
+    position: absolute;
+    width: 16.66%;
+    height: 33.33%;
+    top: 33.33%;
+}
+#textoEnvidar {
+    position: absolute;
+    width: 16.66%;
+    height: 33.33%;
+    top: 33.33%;
+    left: 16.66%;
+}
+#mas {
+    position: absolute;
+    width: 16.66%;
+    height: 33.33%;
+    top: 33.33%;
+    right: 50%;
+}
+#mas ~ button {
+    position: absolute;
+    width: 50%;
+    height: 33.33%;
+    right: 0;
+}
+#envidar {
+    top: 0;
+}
+#ordago {
+    top:33.33%
+}
+#paso {
+    bottom: 0;
+}
+/*Hay Envite*/
+#haymenos {
+    position: absolute;
+    width: 16.66%;
+    height: 33.33%;
+    top: 50%;
+}
+#haytextoEnvidar {
+    position: absolute;
+    width: 16.66%;
+    height: 33.33%;
+    top: 50%;
+    left: 16.66%;
+}
+#haymas {
+    position: absolute;
+    width: 16.66%;
+    height: 33.33%;
+    top: 50%;
+    right: 50%;
+}
+#haymas ~ button {
+    position: absolute;
+    width: 50%;
+    height: 33.33%;
+    right: 0;
+}
+#hayenvidar {
+    top: 0;
+}
+#hayordago {
+    top:33.33%;
+}
+#hayquiero {
+    bottom: 0;
+}
+#haynoquiero {
+    bottom: -33.33%;
+}
+/*Puerta Salir*/
+.puerta {
+    cursor: pointer;
+    position: absolute;
+    width: 7%;
+    height: 15%;
+    bottom: 2%;
+    right: 0;
+}
+.flecha {
+    cursor: pointer;
+    position: absolute;
+    width: 3%;
+    height: 8%;
+    bottom: 5.5%;
+    right: 6%;
+}
+/*Chat Stats*/
+.chatStats {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    top: 80%;
+}
+/*Chat*/
+.chatMesa {
+    position: absolute;
+    width: 52.5%;
+    height: 100%;
+    border-right: 5px ridge white;
+}
+.mensajes {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 80%;
+    background-color: black;
+    color: white;
+}
+.enviarMensajes {
+    position: absolute;
+    top: 80%;
+    width: 100%;
+    height: 20%;
+}
+.enviarMensajes > input {
+    position: absolute;
+    top: 0;
+    width: 85%;
+    height: 100%;
+}
+.enviarMensajes > button {
+    position: absolute;
+    right: 0;
+    width: 15%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    border: 4px ridge #96623d;
+}
+.enviarMensajes > button:hover {
+    background-color: #96623d;
+    color: black;
+    border: 4px ridge white;
+}
+.textoMensaje > span {
+    color: rgb(0, 255, 0);
+}
+/*Usuarios Mesa*/
+.usuariosMesa {
+    position: absolute;
+    left: 52.5%;
+    width: 15%;
+    height: 100%;
+}
+.headerUsuariosMesa {
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    font-size: 115%;
+    background-color: #96623d;
+    color: white;
+    border-right: 5px ridge white;
+    border-bottom: 5pt ridge white;
+}
+.bodyUsuariosMesa {
+    position: absolute;
+    width: 100%;
+    height: 75%;
+    bottom: 0;
+    background-color: black;
+    border-right: 5px ridge white;
+}
+#usuariosonline > div > li {
+    width: 50%;
+    color: rgb(0, 255, 0);
+    font-size: 110%;
+}
+#usuariosonline > div > li > div > a {
+    cursor: pointer;
+}
+/*Estadisticas*/
+.statsMesa {
+    position: absolute;
+    right: 0;
+    width: 32.5%;
+    height: 100%;
+    background-color: black;
+}
+.headerStatsMesa {
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    font-size: 115%;
+    background-color: #96623d;
+    color: white;
+    border-right: 5px ridge white;
+    border-bottom: 5pt ridge white;
+}
+.tablaEstadisticas {
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    bottom: 15%;
+}
+.tablaEstadisticas > div {
+    position: absolute;
+    border: 3px ridge white;
+    width: 33.33%;
+    height: 33.33%;
+}
+.jugados {
+    left: 33.33%;
+}
+.ganados {
+    right: 0;
+}
+.juegosTabla {
+    top: 33.33%;
+}
+.juegosJugados {
+    top: 33.33%;
+    left: 33.33%;
+}
+.juegosGanados {
+    top: 33.33%;
+    right: 0;
+}
+.vacasTabla {
+    bottom: 0;
+}
+.vacasJugadas {
+    bottom: 0;
+    left: 33.33%;
+}
+.vacasGanadas {
+    bottom: 0;
+    right: 0;
+}
+.abandonos {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 15%;
+}

@@ -1,0 +1,145 @@
+.cartaReparto {
+    position: fixed;
+    width: 6%;
+    height: 18.5%;
+    border-radius: 10px;
+    visibility: hidden;
+}
+/*Usuario*/
+.repartoUsuario {
+    left: 47%;
+    top: 60%;
+}
+.repartirUsuario {
+    animation-name: repartirUsuario;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+@keyframes repartirUsuario {
+    from {
+        visibility: visible;
+    }
+    to {
+        left: 47%;
+        top: 60%;
+    }
+}
+/*Compi*/
+.repartoCompi {
+    left: 47%;
+    top: 20%;
+}
+.repartirCompi {
+    animation-name: repartirCompi;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+@keyframes repartirCompi {
+    from {
+        visibility: visible;
+    }
+    to {
+        left: 47%;
+        top: 20%;
+    }
+}
+/*Rival Izq*/
+.repartoRivalIzq {
+    top: 40%;
+    left: 22.5%;
+}
+.repartirRivalIzq {
+    animation-name: repartirRivalIzq;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+@keyframes repartirRivalIzq {
+    from {
+        visibility: visible;
+    }
+    to {
+        top: 40%;
+        left: 22.5%;
+    }
+}
+/*RivalDer*/
+.repartoRivalDer {
+    top: 40%;
+    left: 70%;
+}
+.repartirRivalDer {
+    animation-name: repartirRivalDer;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+@keyframes repartirRivalDer {
+    from {
+        visibility: visible;
+    }
+    to {
+        top: 40%;
+        left: 70%;
+    }
+}
+/*Aparecer Cartas*/
+.aparecer {
+    animation-name: aparecer;
+    animation-fill-mode:forwards;
+}
+@keyframes aparecer {
+    from {
+        visibility: hidden;
+    }
+    to {
+        visibility: visible;
+    }
+}
+/*Retraso segundos*/
+.unSegundo {
+    animation-delay: 0.5s;
+}
+.dosSegundos {
+    animation-delay: 1s;
+}
+.tresSegundos {
+    animation-delay: 1.5s;
+}
+.cuatroSegundos {
+    animation-delay: 2s;
+}
+.cincoSegundos {
+    animation-delay: 2.5s;
+}
+.seisSegundos {
+    animation-delay: 3s;
+}
+.sieteSegundos {
+    animation-delay: 3.5s;
+}
+.ochoSegundos {
+    animation-delay: 4s;
+}
+.nueveSegundos {
+    animation-delay: 4.5s;
+}
+.diezSegundos {
+    animation-delay: 5s;
+}
+.onceSegundos {
+    animation-delay: 5.5s;
+}
+.doceSegundos {
+    animation-delay: 6s;
+}
+.treceSegundos {
+    animation-delay: 6.5s;
+}
+.catorceSegundos {
+    animation-delay: 7s;
+}
+.quinceSegundos {
+    animation-delay: 7.5s;
+}
+.dieciseisSegundos {
+    animation-delay: 8s;
+}

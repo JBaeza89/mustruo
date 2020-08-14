@@ -1,0 +1,45 @@
+<?php global $URL_PATH;?>
+<?php \dawfony\Ti::extend("view/MainView.phtml"); ?>
+<?php \dawfony\Ti::startBlock("extrahead"); ?>
+<link rel="stylesheet" href="<?= $URL_PATH ?>/css/registro.css">
+<link rel="stylesheet" href="<?= $URL_PATH ?>/css/registroResponsive.css">
+<?php \dawfony\Ti::endBlock(); ?>
+<?php \dawfony\Ti::startBlock("content"); ?>
+<div class="formRegistro">
+<form id="registro" action="registrate" method="POST" enctype="multipart/form-data">
+    <div class="inputs primerInput">
+        <label for="login">Login:</label>
+        <input type="text" id="login" name="login">
+        <small id="errorLogin"></small>
+    </div>
+    <div class="inputs segundoInput">
+        <label for="contrasenna">Contraseña:</label>
+        <input type="password" id="contrasenna" name="contrasenna">
+    </div>
+    <div class="inputs tercerInput">
+        <label for="repitecontrasenna">Repite contraseña:</label>
+        <input type="password" id="repitecontrasenna">
+        <small id="errorContrasenna"></small>
+    </div>
+    <div class="inputs cuartoInput">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" name="email">
+        <small id="errorEmail"></small>
+    </div>
+    <div class="inputs quintoInput">
+        <input type="file" id="avatar" name="avatar" accept="image/*" class="">
+        <label for="avatar" id="valueAvatar">Elige una foto de perfil:</label>
+        <!--<small id="errorAvatar">*Si no se te pondra una por defecto</small>-->
+    </div>
+    <div class="inputs sextoInput">
+        <input class="boton-marron" type="button" onclick="comprobarRegistro()" class="btn boton-naranja float-right" value="Registrarte!">
+        <input type="submit" id="enviar" style="visibility:hidden">
+    </div>
+</form>
+</div>
+<script>
+var URL_PATH = '<?= $URL_PATH ?>';
+</script>
+<script src="<?= $URL_PATH ?>/js/comprobarRegistro.js"></script>
+<?php \dawfony\Ti::endBlock(); ?>
+<?php \dawfony\Ti::endExtend(); ?>

@@ -1,0 +1,80 @@
+.formRegistro {
+    position: absolute;
+    width: 60%;
+    height: 85%;
+    left: 25%;
+    top: 5%;
+}
+.inputs {
+    position: absolute;
+    left: 15%;
+    width: 70%;
+    height: 16.66%;
+}
+.inputs > label {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+}
+.inputs > input {
+    position: absolute;
+    width: 80%;
+    height: 40%;
+    top: 30%;
+    background-color: #96623d;
+    color: black;
+    border: 7px ridge white;
+    border-radius: 10px;
+    font-size: 0.9em;
+}
+.inputs > input:focus {
+    background-color: black;
+    color: white;
+    border: 7px ridge #96623d;
+}
+.inputs > small {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    color: #96623d;
+}
+.primerInput {
+    top: 0;
+}
+.segundoInput {
+    top: 16.66%;
+}
+.tercerInput {
+    top: 33.33%;
+}
+.cuartoInput {
+    bottom: 33.33%;
+}
+.quintoInput {
+    bottom: 16.66%;
+}
+.sextoInput {
+    bottom: 0;
+}
+.inputs > input[type=file] {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    color: #96623d;
+}
+.inputs > input[type=button] {
+    width: 20%;
+    height: 40%;
+    top: 0;
+    right: 20%;
+    background-color: black;
+    color: white;
+    border: 7px ridge #96623d;
+    border-radius: 0;
+}
+.inputs > input[type=button]:hover {
+    background-color: #96623d;
+    color: black;
+    border: 7px ridge white;
+}

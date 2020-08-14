@@ -1,0 +1,482 @@
+/*Ranking*/
+.ranking {
+    position: absolute;
+    height: 100%;
+    width: 22.5%;
+    background-color: white;
+}
+/*header*/
+.headerRanking {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    background-color: #1d0b00;
+    color: white;
+    border: 7px ridge #96623d;
+    border-right: 0;
+}
+.headerRanking > img {
+    position: absolute;
+    width: 25%;
+    height: 80%;
+    top: 10%;
+}
+.textoMustruo {
+    position: absolute;
+    top: 15%;
+    left: 35%;
+    width: 75%;
+    height: 30%;
+    font-size: 200%;    
+}
+.textoPestannas {
+    position: absolute;
+    bottom: 15%;
+    right: 15%;
+    width: 75%;
+    height: 30%;
+    font-size: 120%;
+    text-align: right;
+}
+.pestannasRanking {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 17.5%;
+    font-size: 0.60em;
+}
+.pestannasRanking > ul {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+.pestannasRanking > ul > li {
+    position: absolute;
+    width: 33.33%;
+    height: 100%;
+    background-color: #96623d;
+    color: black;
+    border: 4px ridge white;
+    text-decoration: none;
+    cursor: pointer;
+}
+.pestannasRanking > ul > li:hover {
+    background-color: black;
+    color: white;
+    border: 4px ridge #96623d;
+}
+.pestannaMes {
+    left: 33.33%;
+}
+.pestannaAnno {
+    right: 0;
+}
+/*Clasificacion*/
+.rankingClasificacion {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    bottom: 0;
+    border-left: 7px ridge #96623d;
+    border-bottom: 7px ridge #96623d;
+}
+.rank {
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    background-color: #96623d;
+    color: black;
+    border: 4px ridge white;
+    cursor: pointer;
+}
+.rank:hover {
+    border: 7px ridge white;
+}
+.rank1 {
+    top: 0;
+}
+.rank2 {
+    top: 10%;
+}
+.rank3 {
+    top: 20%;
+}
+.rank4 {
+    top: 30%;
+}
+.rank5 {
+    top: 40%;
+}
+.rank6 {
+    bottom: 40%;
+}
+.rank7 {
+    bottom: 30%;
+}
+.rank8 {
+    bottom: 20%;
+}
+.rank9 {
+    bottom: 10%;
+}
+.rank10 {
+    bottom: 0;
+}
+.rank > span {
+    position: absolute;
+    left: 15%;
+    width: 60%;
+    height: 70%;
+    top: 15%;
+    font-size: 115%;
+    color: #1d0b00;
+}
+.puntos {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    right: 0;
+}
+.puntos > img {
+    position: absolute;
+    width: 35%;
+    height: 55%;
+    right: 65%;
+    top: 22.5%;
+}
+.puntos > .puntoSpan {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    right: 8%;
+    font-size: 0.85em;
+}
+/*Mesas y Chat*/
+.mesasChat {
+    position: absolute;
+    width: 55%;
+    height: 100%;
+    left: 22.5%;
+}
+/*Mesas*/
+.mesas {
+    position: absolute;
+    width: 100%;
+    height: 70%;
+}
+.listo {
+    position: absolute;
+    width: 25%;
+    height: 20%;
+    top: 40%;
+    left: 36%;
+}
+/*Header*/
+.headerMesas {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    background-color: #1d0b00;
+    color: white;
+    border: 7px ridge #96623d;
+}
+.headerMesas > img {
+    position: absolute;
+    width: 7.5%;
+    height: 62.5%;
+    top: 18.75%;
+    left: 5%;
+}
+.textoMesa {
+    position: absolute;
+    width: 40%;
+    left: 17.5%;
+    height: 100%;
+}
+.textoMesa > span {
+    position: absolute;
+    font-size: 160%;
+    left: 10%;
+}
+.nuevaMesa {
+    position: absolute;
+    top: 20%;
+    height: 60%;
+    width: 15%;
+    right: 2.5%;
+    background-color: #96623d;
+    color: black;
+    border: 7px ridge white;
+}
+.nuevaMesa:hover {
+    background-color: black;
+    color: white;
+    border: 7px ridge #96623d;
+}
+.dejarMesa {
+    position: absolute;
+    top: 20%;
+    height: 60%;
+    width: 15%;
+    right: 2.5%;
+    background-color: #96623d;
+    color: black;
+    border: 7px ridge white;
+}
+.dejarMesa:hover {
+    background-color: black;
+    color: white;
+    border: 7px ridge #96623d;
+}
+/*Body*/
+.bodyMesas {
+    position: absolute;
+    border-left: 7px ridge #96623d;
+    border-right: 7px ridge #96623d;
+    width: 100%;
+    height: 80%;
+    bottom: 0;
+}
+.bodyMesas > div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.itemMesa {
+    position: relative;
+    background: url('/Mustruo/media/fondo-madera.png');
+    border: 5px ridge #401c50;
+    font-size: 0.70em;
+    width: 33.33%;
+    height: 50%;
+}
+.asiento {
+    position: absolute;
+    width: 30%;
+    height: 33.33%;
+}
+.asiento > img {
+    position: absolute;
+    left:15%;
+    width: 70%;
+    height: 80%;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.asiento > span {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    bottom: 0;
+}
+.posicion0 {
+    left: 33.33%;
+}
+.posicion1 {
+    top: 33.33%;
+}
+.posicion2 {
+    bottom: 0;
+    left: 33.33%;
+}
+.posicion3 {
+    right: 0;
+    top: 33.33%;
+}
+/*Chat*/
+.chat {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    border-left: 7px ridge #96623d;
+}
+.mensajes {
+    border-top: 7px ridge #96623d;
+    border-right: 7px ridge #96623d;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 82.5%;
+    background-color: black;
+    color: white;
+}
+.enviarMensajes {
+    position: absolute;
+    top: 82.5%;
+    width: 100%;
+    height: 17.5%;
+}
+.enviarMensajes > input {
+    position: absolute;
+    top: 0;
+    width: 85%;
+    height: 100%;
+}
+.enviarMensajes > button {
+    position: absolute;
+    right: 0;
+    width: 15%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    border: 4px ridge #96623d;
+    border-right: 7px ridge #96623d;
+}
+.enviarMensajes > button:hover {
+    background-color: #96623d;
+    color: black;
+    border: 4px ridge white;
+}
+.textoMensaje > span {
+    color: rgb(0, 255, 0);
+}
+/*Usuarios y Stats*/
+.usuarioStats {
+    position: absolute;
+    height: 100%;
+    width: 22.5%;
+    right: 0;
+}
+/*Usuarios*/
+.usuarios {
+    position: absolute;
+    width: 100%;
+    height: 70%;
+}
+.headerUsuarios {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    background-color:  #1d0b00;
+    color: white;
+    border: 7px ridge #96623d;
+    border-left: 0;
+}
+.headerUsuarios > img {
+    position: absolute;
+    width: 15%;
+    height: 62.5%;
+    top: 18.75%;
+    left: 5%;
+}
+.textoUsuarios {
+    position: absolute;
+    width: 82.5%;
+    left: 15%;
+    height: 100%;
+}
+.textoUsuarios > span {
+    font-size: 130%;
+}
+.bodyUsuarios {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    bottom: 0;
+    background-color: black;
+    border-right: 7px ridge #96623d;
+}
+#usuariosonline > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+#usuariosonline > div > li {
+    width: 50%;
+    color: rgb(0, 255, 0);
+    font-size: 110%;
+}
+#usuariosonline > div > li > span {
+    cursor: pointer;
+}
+/*Estadisticas*/
+.estadisticas {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    border: 7px ridge #96623d;
+    border-left: 0;
+}
+.headerEstadisticas {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    background-color:  #1d0b00;;
+    color: white;
+    border-bottom: 7px ridge #96623d;
+}
+.headerEstadisticas > img {
+    position: absolute;
+    width: 10%;
+    height: 62.5%;
+    top: 18.75%;
+    left: 5%;
+}
+.headerEstadisticas > div {
+    position: absolute;
+    width: 85%;
+    height: 100%;
+    left: 15%;
+    font-size: 110%;
+}
+.tablaEstadisticas {
+    position: absolute;
+    width: 100%;
+    height: 52.5%;
+    bottom: 17.5%;
+    background-color: black;
+}
+.tablaEstadisticas > div {
+    position: absolute;
+    background-color: #96623d;
+    color: black;
+    border: 3px ridge white;
+    width: 33.33%;
+    height: 33.33%;
+}
+.jugados {
+    left: 33.33%;
+}
+.ganados {
+    right: 0;
+}
+.juegosTabla {
+    top: 33.33%;
+}
+.juegosJugados {
+    top: 33.33%;
+    left: 33.33%;
+}
+.juegosGanados {
+    top: 33.33%;
+    right: 0;
+}
+.vacasTabla {
+    bottom: 0;
+}
+.vacasJugadas {
+    bottom: 0;
+    left: 33.33%;
+}
+.vacasGanadas {
+    bottom: 0;
+    right: 0;
+}
+.abandonos {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 17.5%;
+    background-color: black;
+    color: #96623d;
+    border-top: 7px ridge #96623d;
+}
+#usuestadisticas {
+    color: rgb(0, 255, 0);
+}

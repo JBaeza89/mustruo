@@ -1,0 +1,84 @@
+<?php global $URL_PATH;?>
+<?php \dawfony\Ti::extend("view/MainView.phtml"); ?>
+<?php \dawfony\Ti::startBlock("extrahead"); ?>
+<link rel="stylesheet" href="<?= $URL_PATH ?>/css/perfil.css">
+<link rel="stylesheet" href="<?= $URL_PATH ?>/css/perfilResponsive.css">
+<?php \dawfony\Ti::endBlock(); ?>
+<?php \dawfony\Ti::startBlock("content"); ?>
+<div class="info">
+    <div class="bloqueImagen">
+        <img src="<?= $URL_PATH ?>/media/avatares/<?= $usuario->imagen ?>" class="imagenUsuario">
+        <?php if (isset($_SESSION["login"])) : ?>
+            <?php if($_SESSION["login"] == $usuario->login) : ?>
+            <label for="avatar" class="subir">Editar <i class="fa fa-pencil"></i></label>
+            <form action="<?= $URL_PATH ?>/cambiarAvatar/<?= $usuario->login ?>/<?= $usuario->imagen ?>" method="POST" enctype="multipart/form-data">
+                <input id="avatar" name="avatar" type="file" style='display: none;' accept="image/*">
+                <input type="submit" id="cambiarAvatar" style="visibility:hidden">
+            </form>
+            <?php endif;?>
+        <?php endif;?>    
+    </div>
+    <div class="datos">
+        <div class="datosLogin bloqueDatos">
+            <span>Login:</span> 
+            <span id="spanLogin"><?= $usuario->login ?></span>
+        </div>
+        <?php if (isset($_SESSION["login"])) : ?>
+        <?php if($_SESSION["login"] == $usuario->login) : ?>
+        <div class="datosContrasenna bloqueDatos">
+            <span>Contraseña:</span>
+            <div class="editarDatos">
+                <span id="spanContrasenna">**********</span>
+                <a href="javascript:void(0);" class="boton-chiquitin editarContrasenna centrarTexto" id="editarContrasenna"><span>Editar <i class="fa fa-pencil"></i></sapn></a>
+                <input class="editarInput editarContrasennas" type="password" id="contrasenna" placeholder="  contraseña nueva">
+                <input class="editarInput repite editarContrasennas" type="password" id="repitecontrasenna" placeholder="  repita contraseña">
+                <a href="javascript:void(0);" class="boton-chiquitin cambiarContrasenna centrarTexto editarContrasennas" id="cambiarContrasenna"><span>Cambiar <i class="fa fa-pencil"></i></span></a>
+                <a href="javascript:void(0);" class="boton-cancelar cancelarContrasenna centrarTexto editarContrasennas" id="cancelarContrasenna"><span>Cancelar</span></a>   
+            </div>
+        </div>
+        <?php endif;?>
+        <?php endif;?> 
+        <div class="datosEmail bloqueDatos">
+            <span>Email:</span>
+            <div class="editarDatos">
+                <span id="spanEmail"><?= $usuario->email ?></span>
+                <?php if (isset($_SESSION["login"])) : ?>
+                <?php if($_SESSION["login"] == $usuario->login) : ?>
+                <a href="javascript:void(0);" class="boton-chiquitin editarMail centrarTexto" id="editarEmail"><span>Editar <i class="fa fa-pencil"></i></span></a>
+                <input class="editarInput editarEmail" type="text" value="<?= $usuario->email ?>" id="email">
+                <a href="javascript:void(0);" class="boton-chiquitin cambiarEmail editarEmail centrarTexto" id="cambiarEmail"><span>Cambiar <i class="fa fa-pencil"></i></span></a>
+                <a href="javascript:void(0);" class="boton-cancelar cancelarEmail centrarTexto editarEmail" id="cancelarEmail">Cancelar</a>
+                <?php endif;?>
+                <?php endif;?>    
+            </div>
+        </div>
+    </div> 
+</div>
+<div class="stats">
+    <h1>Estadisticas:</h1>
+    <div class="statsTabla">
+        <div class="tablaEstadisticas">
+            <div class="jugados centrarTexto statsPrincipal"><span>Jugados</span></div>
+            <div class="ganados centrarTexto statsPrincipal"><span>Ganados</span></div>
+            <div class="juegosTabla centrarTexto statsPrincipal"><span>Juegos</span></div>
+            <div class="juegosJugados centrarTexto statsInfo"><?= $estadisticas["juegos_jugados"] ?></div>
+            <div class="juegosGanados centrarTexto statsInfo"><?= $estadisticas["juegos_ganados"] ?></div>
+            <div class="vacasTabla centrarTexto statsPrincipal"><span>Vacas</span></div>
+            <div class="vacasJugadas centrarTexto statsInfo"><?= $estadisticas["vacas_jugadas"] ?></div>
+            <div class="vacasGanadas centrarTexto statsInfo"><?= $estadisticas["vacas_ganadas"] ?></div>
+        </div>
+        <span class="abandonos centrarTexto statsInfo"><span>Abandonos: <?= $estadisticas["abandonos"] ?></span></span>
+        <div class="tablaMustruo">
+            <div class="headerMustruo centrarTexto">Ranking de Mustruo's</div>
+            <div class="musSemana centrarTexto"><span>Mustruo de la semana: <span><?= $estadisticas["mustruo_semana"] ?></span></span></div>
+            <div class="musMes centrarTexto"><span>Mustruo del mes: <span><?= $estadisticas["mustruo_mes"] ?></span></span></div>
+            <div class="musAnno centrarTexto"><span>Mustruo del año: <span><?= $estadisticas["mustruo_anno"] ?></span></span></div>
+        </div>
+    </div>
+</div>
+<script>
+var URL_PATH = '<?= $URL_PATH ?>';
+</script>
+<script src="<?= $URL_PATH ?>/js/cambiosPerfil.js"></script>
+<?php \dawfony\Ti::endBlock(); ?>
+<?php \dawfony\Ti::endExtend(); ?>

@@ -1,0 +1,133 @@
+<?php global $URL_PATH; ?>
+<?php \dawfony\Ti::extend("view/MainView.phtml"); ?>
+<?php \dawfony\Ti::startBlock("extrahead"); ?>
+<link rel="stylesheet" href="<?= $URL_PATH ?>/css/lobbyResponsive.css">
+<link rel="stylesheet" href="<?= $URL_PATH ?>/css/lobby.css">
+<?php \dawfony\Ti::endBlock(); ?>
+<?php \dawfony\Ti::startBlock("content"); ?>
+  <!-- clasificaciones Mustruo -->
+  <div class="ranking">
+    <header class="headerRanking">
+      <img src="<?= $URL_PATH ?>/media/trofeo.png">
+      <span class="textoMustruo">Mustruo</span>
+      <span class="textoPestannas" id="pestannasRanking">de la semana</span>
+      <div class="pestannasRanking">
+        <ul>
+          <li class="centrarTexto" id="semana"><span>semana</span></li>
+          <li class="centrarTexto pestannaMes" id="mes"><span>mes</span></li>
+          <li class="centrarTexto pestannaAnno" id="anno"><span>año</span></li>
+        </ul>
+      </div>
+    </header>
+    <section class="rankingClasificacion">
+      <div id="clasificacion"></div>
+    </section>
+  </div>
+  <!-- 2/3 -->
+  <div class="mesasChat">
+    <!-- mesas -->
+    <div class="mesas">
+      <header class="headerMesas">
+        <img src="<?= $URL_PATH ?>/media/mesas.png" class="imgCabecera">
+        <span class="textoMesa centrarTexto"><span>Únete o crea una mesa</span></span>
+        <?php if (isset($_SESSION["login"])) : ?>
+          <!-- boton nueva mesa-->
+          <button id="nuevamesa" class="nuevaMesa">Nueva mesa</button>
+        <?php endif; ?>
+        <!-- boton levantarse de mesa-->
+        <button id="levantarse" class="dejarMesa hidden">Dejar mesa</button>
+      </header>
+      <section id="mesas" class="bodyMesas scroll"></section>
+    </div>
+    <!-- chat-->
+    <div class="chat">
+        <section id="chat" class="mensajes scroll"></section>
+        <div class="enviarMensajes">
+          <input type="text" id="mensaje" placeholder="Escribe algo...">
+          <button id="enviarmensaje" class="centrarTexto"><span>Enviar</span></button>
+        </div>
+    </div>
+  </div>
+
+  <div class="usuarioStats">
+    <!--Inicio 3/3-->
+    <!-- Usuarios online-->
+    <div class="usuarios">
+      <header class="headerUsuarios">
+        <img src="<?= $URL_PATH ?>/media/online.png" class="imgCabecera">
+        <span class="textoUsuarios centrarTexto"><span>Usuarios online</span></span>
+      </header>
+      <section class="bodyUsuarios scroll">
+        <ul id="usuariosonline"></ul>
+      </section>
+    </div>
+    <!-- Estadisticas-->
+    <div class="estadisticas">
+      <header class="headerEstadisticas">
+        <img src="<?= $URL_PATH ?>/media/estadistica.png" class="imgCabecera">
+        <div class="centrarTexto"><span class="textoEstadisticas">Estadísticas de <a id="usuestadisticas"></a></span></div>
+      </header>
+      <section class="tablaEstadisticas">
+        <div class="jugados centrarTexto"><span>Jugados</span></div>
+        <div class="ganados centrarTexto"><span>Ganados</span></div>
+        <div class="juegosTabla centrarTexto"><span>Juegos</span></div>
+        <div class="juegosJugados centrarTexto"><span id="juegosJugados"></span></div>
+        <div class="juegosGanados centrarTexto"><span id="juegosGanados"></span></div>
+        <div class="vacasTabla centrarTexto"><span>Vacas</span></div>
+        <div class="vacasJugadas centrarTexto"><span id="vacasJugadas"></span></div>
+        <div class="vacasGanadas centrarTexto"><span id="vacasGanadas"></span></div>
+      </section>
+      <span class="abandonos centrarTexto"><span>Abandonos: <span id="abandonos"></span></span></span>
+    </div>
+  </div>
+  <!--Fin 3/3-->
+  <!-- modal de nueva mesa. TODO -->
+  <div class="modal fade" id="nuevamesamodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content  bg-secondary">
+        <div class="modal-header">
+          <h5 class="modal-title font-weight-bold">Crear Nueva Mesa</h5>
+        </div>
+        <form action="<?= $URL_PATH ?>/mesa/nuevamesa" method="POST">
+
+          <div class="modal-body">
+            Vacas a ganar:
+            <input type="radio" name="vacas" value="1">1
+            <input type="radio" name="vacas" value="2" checked>2
+            <input type="radio" name="vacas" value="3">3
+            <br>
+            Juegos a ganar por vaca:
+            <input type="radio" name="juegos" value="2">2
+            <input type="radio" name="juegos" value="3" checked>3
+            <input type="radio" name="juegos" value="4">4
+            <br>
+            Puntos por juego:
+            <input type="radio" name="puntos" value="30" checked>30
+            <input type="radio" name="puntos" value="40">40
+            <br>
+            <input type="hidden" name="creador" value="<?= $usuario->login ?>">
+            <button id="botpr" type="button" class="btn btn-danger">Privada</button>
+            <input id="clave" type="text" name="contrasenna" placeholder="Introduce clave">
+            <input id="privacidad" type="hidden" name="privacidad" value="0">
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-light">Crear Mesa</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- javascript -->
+<script>
+  var usuario = <?= json_encode($usuario) ?>;
+  var path = "<?= $URL_PATH ?>";
+  var arg = "<?= $arg ?>";
+</script>
+<script src="http://localhost:3300/socket.io/socket.io.js"></script>
+<script src="js/lobby.js"></script>
+
+<?php \dawfony\Ti::endBlock(); ?>
+<?php \dawfony\Ti::endExtend(); ?>

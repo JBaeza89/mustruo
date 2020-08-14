@@ -1,0 +1,17 @@
+Servidores: El trabajo en el servidor se efectuara con dos lenguajes, cada uno orientado a una funcionalidad.
+
+-PHP: Se usara para construir la arquitectura básica de un modelo MVC, donde se contara con el uso del "FrameWork"
+KLASTO para las operaciones de bases de datos, asi como la construccion de una API REST para operar con ella.
+
+-Node js: Se usara para establecer la comunicación en tiempo real con los clientes. Para ello se usaran las
+librerias Express y Socket.io.
+Tambien se usara la libreria Fetch para hacer uso de la API REST creada y asi hacer de intermediario entre el
+cliente y dicha API convirtiendo multiples llamadas desde el cliente en una sola desde el servidor de Node,
+cuyos datos resultantes seran trasladados a los usuarios mediante sockets.
+
+*BBDD: Se usara la BBDD phpMyAdmin, al ser una aplicación cuya conexion con la base de datos se llevara a traves
+de php.
+
+Cliente: Se usara un modelado dinámico en php para la construccion del html, uso de js para la comunicación
+en tiempo real y renderización de las distintas opciones que la aplicación ofrece, evitando recargas de la 
+página, y css apoyado en bootstrap para dar los estilos a la página.

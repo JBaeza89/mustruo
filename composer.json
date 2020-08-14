@@ -1,0 +1,14 @@
+{
+    "name": "mustruo",
+    "type": "project",
+    "require": {
+        "noahbuscher/macaw": "dev-master",
+        "victorjfg/dawfony": "dev-master"
+    },
+    "authors": [
+        {
+            "name": "CodeRangers"
+        }
+    ],
+    "minimum-stability": "dev"
+}

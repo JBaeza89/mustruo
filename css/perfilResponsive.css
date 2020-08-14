@@ -1,0 +1,10 @@
+@media all and (max-height: 535px), (max-width: 1190px){
+    html, body {
+        font-size: 0.85em;
+    }  
+}
+@media all and (max-height: 400px), (max-width: 880px) {
+    html, body {
+        font-size: 0.70em;
+    }  
+}

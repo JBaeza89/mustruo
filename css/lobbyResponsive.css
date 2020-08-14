@@ -1,0 +1,15 @@
+@media all and (max-height: 630px), (max-width: 1440px){
+    html, body {
+        font-size: 0.85em;
+    }  
+}
+@media all and (max-height: 540px), (max-width: 1265px) {
+    html, body {
+        font-size: 0.70em;
+    }  
+}
+@media all and (max-height: 455px), (max-width: 1050px) {
+    html, body {
+        font-size: 0.55em;
+    }  
+}

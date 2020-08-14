@@ -1,0 +1,309 @@
+/* Perfil */
+.info {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    color: white;
+}
+/*Imagen*/
+.bloqueImagen {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+}
+.imagenUsuario {
+    position: absolute;
+    top: 10%;
+    width: 50%;
+    height: 67.5%;
+    left: 25%;
+}
+.subir{
+    position: absolute;
+    width: 50%;
+    height: 12.5%;
+    left: 25%;
+    bottom: 10%;
+    background-color: black;
+    color: white;
+    border: 5px ridge #96623d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.subir:hover{
+    background-color: #96623d;
+    color: black;
+    border: 5px ridge white;
+}
+/*Datos*/
+.datos {
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    right: 0;
+}
+.bloqueDatos > span {
+    position: absolute;
+    width: 20%;
+    height: 50%;
+    top: 25%;
+    display: flex;
+    align-items: center;
+}
+/*Login*/
+.datosLogin {
+    position: absolute;
+    width: 100%;
+    height: 33.33%;
+}
+.datosLogin > span:last-child {
+    left: 20%;
+    position: absolute;
+    width: 20%;
+    height: 50%;
+    top: 25%;
+    display: flex;
+    align-items: center;
+}
+/*Contrasenna*/
+.datosContrasenna {
+    position: absolute;
+    width: 100%;
+    height: 33.33%;
+    top: 33.33%;
+}
+/*Emaill*/
+.datosEmail {
+    position: absolute;
+    width: 100%;
+    height: 33.33%;
+    bottom: 0;
+}
+/*Editar*/
+.editarDatos {
+    position: absolute;
+    width: 80%;
+    height: 50%;
+    top: 25%;
+    left: 20%;
+}
+.editarDatos > span {
+    position: absolute;
+    width: 20%;
+    height: 50%;
+    top: 25%;
+    display: flex;
+    align-items: center;
+}
+.boton-chiquitin {
+    width: 10%;
+    height: 40%;
+    font-size: 0.7em;
+    background-color: black;
+    color: white;
+    border: 3px ridge #96623d;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.boton-chiquitin:hover {
+    background-color: #96623d;
+    color: black;
+    border: 3px ridge white;
+    text-decoration: none;
+}
+.boton-cancelar {
+    width: 10%;
+    height: 40%;
+    font-size: 0.8em;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    border: 3px ridge rgb(255, 0, 0);
+    border-radius: 5px;
+    text-decoration: none;
+}
+.boton-cancelar:hover {
+    background-color: white;
+    color: #1d0b00;
+    border: 3px ridge rgb(255, 0, 0);
+    text-decoration: none;
+}
+.editarContrasenna {
+    position: absolute;
+    left: 20%;
+    top: 22.5%;
+}
+.editarInput {
+    position: absolute;
+    width: 18%;
+    height: 40%;
+    font-size: 0.675em;
+    background-color: #96623d;
+    color: black;
+    border: 3px ridge white;
+    border-radius: 5px;
+    top: 25%;
+}
+.repite {
+    left: 20%;
+}
+.cambiarContrasenna {
+    position: absolute;
+    top: 25%;
+    left: 42%;
+}
+.cancelarContrasenna {
+    position: absolute;
+    top: 25%;
+    left: 55%;
+}
+.editarMail {
+    position: absolute;
+    left: 30%;
+    top: 25%;
+}
+.cambiarEmail {
+    position: absolute;
+    left: 22%;
+    top: 25%;
+}
+.cancelarEmail {
+    position: absolute;
+    left: 34%;
+    top: 25%;
+}
+.informacionEditar {
+    font-size: 10px;
+    color: lightblue;
+}
+.editarContrasennas {
+    display: none;
+}
+.editarEmail {
+    display: none;
+}
+/*Estadisticas*/
+.stats {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    border-top: 3px ridge white;
+}
+.stats > h1 {
+    top: 5%;
+    position: absolute;
+    width: 35%;
+    height: 95%;
+    text-align: center;
+    color:white;
+}
+.statsTabla {
+    top: 5%;
+    position: absolute;
+    width: 65%;
+    height: 95%;
+    right: 0;
+}
+/*stats normales*/
+.tablaEstadisticas {
+    position: absolute;
+    width: 50%;
+    height: 65%;
+}
+.tablaEstadisticas > div {
+    position: absolute;
+    width: 33.33%;
+    height: 33.33%;
+}
+.statsInfo {
+    background-color: #96623d;
+    color: white;
+    border: 5px ridge #1d0b00;
+}
+.statsPrincipal {
+    background-color: #1d0b00;
+    color: white;
+    border: 5px ridge #96623d;
+}
+.jugados {
+    left: 33.33%;
+}
+.ganados {
+    right: 0;
+}
+.juegosTabla {
+    top: 33.33%;
+}
+.juegosJugados {
+    top: 33.33%;
+    left: 33.33%;
+}
+.juegosGanados {
+    top: 33.33%;
+    right: 0;
+}
+.vacasTabla {
+    bottom: 0;
+}
+.vacasJugadas {
+    bottom: 0;
+    left: 33.33%;
+}
+.vacasGanadas {
+    bottom: 0;
+    right: 0;
+}
+/*stats abandono*/
+.abandonos {
+    position: absolute;
+    width: 33.33%;
+    height: 15%;
+    top: 65%;
+    right: 50%;
+}
+/*stats mustruo*/
+.tablaMustruo {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    right: 0;
+    top: 0;
+}
+.tablaMustruo > div {
+    width: 70%;
+    height: 15%;
+    position: absolute;
+    right: 15%;
+}
+.headerMustruo {
+    top: 5%;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+.musSemana {
+    top: 20%;
+    background-color: white;
+    color: #1d0b00;
+    border: 5px ridge rgb(255, 0, 0);
+    
+}
+.musMes {
+    top: 35%;
+    background-color: white;
+    color: #1d0b00;
+    border: 5px ridge rgb(255, 0, 0);
+}
+.musAnno {
+    top: 50%;
+    background-color: white;
+    color: #1d0b00;
+    border: 5px ridge rgb(255, 0, 0);
+}
+.tablaMustruo > div > span > span {
+    position: absolute;
+    right: 12.5%;
+}

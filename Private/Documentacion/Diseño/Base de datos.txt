@@ -1,0 +1,42 @@
+-Tabla usuario: Contiene los datos del usuario al registrarse, aunque algunos pueden cambiarse posteriormente.
+
+-Tabla rol: Es una tabla de restriccion. Actualmente solo admite dos roles, usuario normal y Administrador, 
+aunque este último aun no tiene funciones propias definidas.
+
+-Tabla estadisticas: Contiene las estadisticas de juego de cada usuario, asi como un historico de los premios
+ganados.
+
+-Tabla mustruo_temporal: tabla donde se almacenan los datos temporales de cada usuario para entregar 
+los premios al fin de cada periodo.
+
+-Tabla tipo_mustruo: Es una tabla de restriccion. Admite tres valores, cada uno para el ciclo de los mustruos
+(semanal, mensual, Anual).
+
+-Tabla mustruo: Tabla donde se almacenan todos los mustruos otorgados.
+
+-Tabla usuarios_por_mesa: Tabla donde se almacenan los usuarios que hay en cada mesa, 
+asi como su posicion y pareja en esta.
+
+-Tabla pareja: Es una tabla de restricción. Admite unicamente los valores 0 y 1 para poder operar durante el
+juego con ello.
+
+-Tabla Mesa: Tabla que contiene los datos de la mesa al crearse, desde el formato de la partida, privacidad, 
+creador(este usuario tendra opciones administrativas en la mesa) y estado.
+
+-Tabla privacidad: Es una tabla de restriccion. Admite unicamente los valores 0 y 1 para saber si exige
+contraseña para unirte a la mesa o no.
+
+-Tabla estado_mesa: Es una tabla de restriccion. Admite unicamente los valores 0 y 1 para saber si la mesa esta en
+juego o esperando usuarios.
+
+-Tabla jugadas: Es la tabla donde se va actualizando el desarrollo de la partida, desde la posición de la mano,
+el turno de juego, la jugada que corresponde, o las acciones ejecutadas por los usuarios.
+
+-Tabla marcador: Es la tabla donde se almacenan los marcadores de cada pareja y partida mientras esta se juega.
+
+-Tabla cartas: Es la tabla donde se crea la baraja con que se jugara cada partida.
+
+-Tabla estado_cartas: Es una tabla de restriccion. Sirve para conocer la ubicación de cada carta en cada
+momento. De 0 a 3, la carta esta en la mano del jugador de dicha posicion, con el 4 la carta esta en la baraja
+y con el 5 la carta esta en la pila de descartes.
+

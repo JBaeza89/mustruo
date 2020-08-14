@@ -1,0 +1,10 @@
+La aplicación web Mustruo esta orientada a proveer un espacio de juego y socialización canalizado
+a traves del juego de cartas "Mus". La aplicación esta orientada a ser autogestionada con scripts 
+que automaticen todos los procesos de actualización tanto de clasificaciones como de limpieza en 
+las mesas, asi como el reparto de los premios (simbolicos) por ser el mejor jugador tanto de la 
+semana, mes y año.
+Al ser un juego clásico de la ideosincrasia española, la aplicación esta orientada a un público con
+un amplio rango edad, siendo facil de usar para aquellos usuarios poco afines al uso de aplicaciones
+web.
+Para ser usada, la aplicación precisa de un registro, aunque es posible que se añadan funcionalidades
+para poder navegar e interactuar con ella como observador.

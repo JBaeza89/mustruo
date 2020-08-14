@@ -1,0 +1,16 @@
+El proyecto constara de 4 páginas.
+
+- Registro: En esta página, se programara el formulario de registro en la aplicación, comprobando
+que el login del usuario no exista previamente y cuidando la seguridad de la base de datos con los
+datos a recibir.
+
+- Perfil: En esta página se vera el perfil de un usuario, pudiendo modificar algunos datos si es
+del propio usuario, o solo viendo los datos y estadisticas completas de otros usuarios.
+
+- Lobby: Es la puerta de entrada a la aplicación, desde aqui puedes loguearte, registrarte, chatear,
+ver los rankings, ver que usuarios estan conectados y comprobar sus estadisticas de juego,
+unirte a una mesa para jugar, o crear una mesa nueva.
+
+- Mesa: Aqui se desarrolla la partida. Además de las acciones propias del juego, contiene chat de partida,
+posibilidad de ver estadisticas a otros usuarios, y vista constante de marcadores y desarrollo de cada mano.
+Se restringe la posibilidad de que un usuario pueda jugar en dos mesas a la vez.

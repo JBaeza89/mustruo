@@ -1,0 +1,312 @@
+<?php global $URL_PATH; ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Propia hoja de estilos -->
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="<?= $URL_PATH ?>/css/main.css">
+    <link rel="stylesheet" href="<?= $URL_PATH ?>/css/mesa.css">
+    <link rel="stylesheet" href="<?= $URL_PATH ?>/css/repartirCartas.css">
+    <link rel="stylesheet" href="<?= $URL_PATH ?>/css/mesaResponsive.css">
+    <title>
+        <?= $data["title"] ?> - Mustruo
+    </title>
+</head>
+
+<body>
+    <div class="principalMesa">
+        <!--Partida-->
+        <div class="partida">
+            <!--Puntos Partida-->
+            <div class="puntosPartida">
+                    <div class="puntosPuntosPartida centrarTexto"><span>Puntos</span></div>
+                    <div class="juegosPuntosPartida centrarTexto"><span>Juegos</span></div>
+                    <div class="vacasPuntosPartida centrarTexto"><span>Vacas</span></div>
+                    <div class="equipoa centrarTexto"><span>Pareja A</span><span><?=$parejaA[0]?> / <?=$parejaA[1]?></span></div>
+                    <div class="puntosa centrarTexto"><span id="puntosa"><?=$marcador[0]->puntos?></span></div>
+                    <div class="juegosa centrarTexto"><span id="juegosa"><?=$marcador[0]->juegos?></span></div>
+                    <div class="vacasa centrarTexto"><span id="vacasa"><?=$marcador[0]->vacas?></span></div>
+                    <div class="equipob centrarTexto"><span>Pareja B</span><span><?=$parejaB[0]?> / <?=$parejaB[1]?></span></div>
+                    <div class="puntosb centrarTexto"><span id="puntosb"><?=$marcador[1]->puntos?></span></div>
+                    <div class="juegosb centrarTexto"><span id="juegosb"><?=$marcador[1]->juegos?></span></div>
+                    <div class="vacasb centrarTexto"><span id="vacasb"><?=$marcador[1]->vacas?></span></div>
+            </div>
+            <!--Cuadro Envites-->
+            <div id="mostrarCuadro" class="boton-marron centrarTexto"><span>Mostrar Cuadro Envites</span></div>
+            <!--Posible Modificacion-->
+            <div class="cuadroEnvites hidden" id="cuadroEnvites">
+                <div>
+                    <span>Grande: <span id="grande"><?=$situacionEntrada["grande"]?></span></span>
+                </div>
+                <div>
+                    <span>Chica: <span id="chica"><?=$situacionEntrada["chica"]?></span></span>
+                </div>
+                <div>
+                    <span>Pares: <span id="pares"><?=$situacionEntrada["pares"]?></span></span>
+                </div>
+                <div>
+                    <span>Juego: <span id="juego"><?=$situacionEntrada["juego"]?></span></span>
+                </div>
+                <div>
+                    <span>Punto: <span id="punto"><?=$situacionEntrada["punto"]?></span></span>
+                </div>
+            </div>
+            <!--Cuenta Atras-->
+            <div class="reloj hidden centrarTexto" id="reloj"><span>10</span></div>
+            <!--Interacción-->
+            <div class="interaccion" id="interaccion">
+                <!--Mus-->
+                <div class="hidden" id="haymus">
+                    <button id="mus" class="btn boton-marron opcionUno centrarTexto"><span>Mus</span></button>
+                    <button id="nomus" class="btn boton-marron opcionDos centrarTexto"><span>No Mus</span></button>
+                </div>
+                <!--No hay Envite-->
+                <div class="hidden" id="nohayEnvite">
+                    <button id="menos" class="btn boton-marron mas centrarTexto"><span>-</span></button>
+                    <div class="centrarTexto" id="textoEnvidar"><span>2</span></div>
+                    <button id="mas" class="btn boton-marron menos centrarTexto"><span>+</span></button>
+                    <button id="paso" class="btn boton-marron centrarTexto"><span>Paso</span></button>
+                    <button id="envidar" class="btn boton-marron centrarTexto"><span>Envido 2</span></button>
+                    <button id="ordago" class="btn boton-marron centrarTexto"><span>Órdago</span></button>
+                </div>
+                <!--Hay Envite-->
+                <div class="hidden" id="hayEnvite">
+                    <button id="haymenos" class="btn boton-marron menos centrarTexto"><span>-</span></button>
+                    <div class="centrarTexto textoEnvidar" id="haytextoEnvidar"><span>2</span></div>
+                    <button id="haymas" class="btn boton-marron mas centrarTexto"><span>+</span></button>
+                    <button id="haynoquiero" class="btn boton-marron centrarTexto"><span>No Quiero</span></button>
+                    <button id="hayquiero" class="btn boton-marron centrarTexto"><span>Quiero</span></button>
+                    <button id="hayenvidar" class="btn boton-marron centrarTexto"><span>Envido 2</span></button>
+                    <button id="hayordago" class="btn boton-marron centrarTexto"><span>Órdago</span></button>
+                </div>
+                <!--Ordago-->
+                <div class="hidden" id="responderOrdago">
+                    <button id="quiero" class="btn boton-marron opcionUno centrarTexto"><span>Quiero</span></button>
+                    <button id="noquiero" class="btn boton-marron opcionDos centrarTexto"><span>No Quiero</span></button>
+                </div>
+            </div>
+            <!--Usuarios-->
+            <!--Comapannero-->
+            <!--Bloque Logo-->
+            <div class="compannero bloqueUsu">
+                <img src="<?= $URL_PATH ?>/media/avatares/<?= $compannero->imagen ?>">
+                <div class="centrarTexto"><span class="pointer" id="compannero"><?= $compannero->login ?></span></div>
+            </div>
+            <!--Bocadillo-->
+            <div class="bocadillo bocataCompi hidden" id="bocatacompi">
+                <div class="globo centrarTexto"><span id="textocompi"><span></div>
+                <div class="piquitoIzq"></div>
+            </div>
+            <!--RivalDer-->
+            <!--Bloque Logo-->
+            <div class="rivalDer bloqueUsu">
+                <img src="<?= $URL_PATH ?>/media/avatares/<?= $rivalDer->imagen ?>">
+                <div class="centrarTexto"><span class="pointer" id="rivalder"><?= $rivalDer->login ?></span></div>
+            </div>
+            <!--Bocadillo-->
+            <div class="bocadillo bocataRivalDer hidden" id="bocatarivalder">
+                <div class="globo centrarTexto"><span id="textorivalder"><span></div>
+                <div class="piquitoIzq"></div>
+            </div>
+            <!--RivalIIzq-->
+            <!--Bloque Logo-->
+            <div class="rivalIzq bloqueUsu">
+                <img src="<?= $URL_PATH ?>/media/avatares/<?= $rivalIzq->imagen ?>">
+                <div class="centrarTexto"><span class="pointer" id="rivalizq"><?= $rivalIzq->login ?></span></div>
+            </div>
+            <!--Bocadillo-->
+            <div class="bocadillo bocataRivalIzq hidden" id="bocatarivalizq">
+                <div class="globo centrarTexto"><span id="textorivalizq"><span></div>
+                <div class="piquitoDer"></div>
+            </div>
+            <!--Mesa-->
+            <div class="mesaJuego">
+            <!--Repartir-->
+                <button class="boton-marron hidden" id="repartir">Repartir</button>
+                <!--Tapete-->
+                <div class="tapete"></div>
+                <!--Reparto-->
+                <!--De Usu-->
+                <div class="hidden" id="deUsu">
+                    <img class="cartaReparto repartoUsuario repartirRivalDer" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoUsuario repartirCompi unSegundo" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoUsuario repartirRivalIzq dosSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoUsuario repartirRivalDer cuatroSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoUsuario repartirCompi cincoSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoUsuario repartirRivalIzq seisSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoUsuario repartirRivalDer ochoSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoUsuario repartirCompi nueveSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoUsuario repartirRivalIzq diezSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoUsuario repartirRivalDer doceSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoUsuario repartirCompi treceSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoUsuario repartirRivalIzq catorceSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                </div>
+                <!--De Compi-->
+                <div class="hidden" id="deCompi">
+                    <img class="cartaReparto repartoCompi repartirRivalIzq" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoCompi repartirUsuario unSegundo" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoCompi repartirRivalDer dosSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoCompi repartirRivalIzq cuatroSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoCompi repartirUsuario cincoSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoCompi repartirRivalDer seisSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoCompi repartirRivalIzq ochoSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoCompi repartirUsuario nueveSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoCompi repartirRivalDer diezSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoCompi repartirRivalIzq doceSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoCompi repartirUsuario treceSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoCompi repartirRivalDer catorceSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                </div>
+                <!--De RivalIzq-->
+                <div class="hidden" id="deRivalIzq">
+                    <img class="cartaReparto repartoRivalIzq repartirUsuario" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoRivalIzq repartirRivalDer unSegundo" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoRivalIzq repartirCompi dosSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoRivalIzq repartirUsuario cuatroSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoRivalIzq repartirRivalDer cincoSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoRivalIzq repartirCompi seisSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoRivalIzq repartirUsuario ochoSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoRivalIzq repartirRivalDer nueveSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoRivalIzq repartirCompi diezSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoRivalIzq repartirUsuario doceSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoRivalIzq repartirRivalDer treceSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoRivalIzq repartirCompi catorceSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                </div>
+                <!--De RivalDer-->
+                <div class="hidden" id="deRivalDer">
+                    <img class="cartaReparto repartoRivalDer repartirCompi" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoRivalDer repartirRivalIzq unSegundo" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoRivalDer repartirUsuario dosSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoRivalDer repartirCompi cuatroSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoRivalDer repartirRivalIzq cincoSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoRivalDer repartirUsuario seisSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoRivalDer repartirCompi ochoSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoRivalDer repartirRivalIzq nueveSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoRivalDer repartirUsuario diezSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoRivalDer repartirCompi doceSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoRivalDer repartirRivalIzq treceSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                    <img class="cartaReparto repartoRivalDer repartirUsuario catorceSegundos" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                </div>
+                <!--Yo-->
+                <!--Cartas-->
+                <div class="misCartas cartasHorizontal">
+                    <img class="hidden" id="carta1" src="<?= $URL_PATH ?>/media/baraja/<?=$cartas[0]->imagen?>">
+                    <img class="hidden" id="carta2" src="<?= $URL_PATH ?>/media/baraja/<?=$cartas[1]->imagen?>">
+                    <img class="hidden" id="carta3" src="<?= $URL_PATH ?>/media/baraja/<?=$cartas[2]->imagen?>">
+                    <img class="hidden" id="carta4" src="<?= $URL_PATH ?>/media/baraja/<?=$cartas[3]->imagen?>">
+                </div>
+                <!--Mano-->
+                <img class="mano manoUsuario hidden" id="manousuario" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                <!--Compi-->
+                <!--Cartas-->
+                <div class="compiCartas cartasHorizontal" id="compi">
+                    <img class="hidden" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg" id="compi1">
+                    <img class="hidden" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg" id="compi2">
+                    <img class="hidden" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg" id="compi3">
+                    <img class="hidden" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg" id="compi4">
+                </div>
+                <!--Mano-->
+                <img class="mano manoCompi hidden" id="manocompi" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                <!--Rival Izquierda-->
+                <!--Cartas-->
+                <div class="rivalizqCartas cartasVertical" id="rivalizq">
+                    <img class="hidden" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg" id="rivalizq1">
+                    <img class="hidden" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg" id="rivalizq2">
+                    <img class="hidden" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg" id="rivalizq3">
+                    <img class="hidden" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg" id="rivalizq4">
+                </div>
+                <!--Mano-->
+                <img class="mano manoRivalIzq hidden" id="manorivalizq" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                <!--Rival Derecha-->
+                <!--Cartas-->
+                <div class="rivalderCartas cartasVertical" id="rivalder">
+                    <img class="hidden" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg" id="rivalder1">
+                    <img class="hidden" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg" id="rivalder2">
+                    <img class="hidden" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg" id="rivalder3">
+                    <img class="hidden" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg" id="rivalder4">
+                </div>
+                <!--Mano-->
+                <img class="mano manoRivalDer hidden" id="manorivalder" src="<?= $URL_PATH ?>/media/baraja/reverso.jpg">
+                <!--Descartes-->
+                <div class="posDescartes centrarTexto hidden" id="divDescartes">
+                    <button class="boton-marron centrarTexto" id="descartar"><span>Descartar</span></button>
+                    <span>(Click a las cartas para descartar)</span>
+                </div>
+                <!--Texto Tapete-->
+                <div class="textoTapete centrarTexto">
+                    <span class="grandeTapete " id="tapetej"><?= strtoupper($situacionEntrada["jugada"])?></span>
+                    <div class="pequennoTapete centrarTexto hidden " id="tapetesdiv"><span id="tapetes"></span></div>
+                </div>
+            </div>
+            <!--Puerta Salir-->
+            <img src="<?= $URL_PATH ?>/media/flecha.png" class="flecha" title="Abandonar partida">
+            <img src="<?= $URL_PATH ?>/media/salir.png" class="puerta" id="salir" title="Abandonar partida">
+        </div>
+        <!--Chat y estadisticas-->
+        <div class="chatStats">
+            <!--Chat-->
+            <div class="chatMesa">
+                    <section class="mensajes scroll" id="chat">
+                    </section>
+                    <div class="enviarMensajes">
+                        <input type="text" id="mensaje" placeholder="Escribe algo...">
+                        <button class="centrarTexto" id="enviarmensaje"><span>Enviar</span></button>
+                    </div>
+            </div>
+            <!--Usuarios online-->
+            <div class="usuariosMesa">
+                <header class="headerUsuariosMesa centrarTexto">
+                    <span>Usuarios en partida</span>
+                </header>
+                <section class="bodyUsuariosMesa">
+                    <ul id="usuariosonline"></ul>
+                </section>
+            </div>
+            <!--Stats-->
+            <div class="statsMesa">
+                <header class="headerStatsMesa centrarTexto">
+                    <span>Estadísticas de <span id="usuestadisticas"></span></span>
+                </header>
+                <section class="tablaEstadisticas">
+                    <div class="jugados centrarTexto"><span>Jugados</span></div>
+                    <div class="ganados centrarTexto"><span>Ganados</span></div>
+                    <div class="juegosTabla centrarTexto"><span>Juegos</span></div>
+                    <div class="juegosJugados centrarTexto"><span id="juegosJugados"></span></div>
+                    <div class="juegosGanados centrarTexto"><span id="juegosGanados"></span></div>
+                    <div class="vacasTabla centrarTexto"><span>Vacas</span></div>
+                    <div class="vacasJugadas centrarTexto"><span id="vacasJugadas"></span></div>
+                    <div class="vacasGanadas centrarTexto"><span id="vacasGanadas"></span></div>
+                </section>
+                <span class="abandonos centrarTexto"><span>Abandonos: <span id="abandonos"></span></span></span>
+            </div>
+        </div>
+    </div>
+    <!--SCRIPT-->
+    <script>
+        var usuario = <?= json_encode($usuario) ?>;
+        var compannero = <?= json_encode($compannero) ?>;
+        var rivalDer = <?= json_encode($rivalDer) ?>;
+        var rivalIzq = <?= json_encode($rivalIzq) ?>;
+        var path = "<?= $URL_PATH ?>";
+        var mesa = <?=json_encode($mesa)?>;
+        var situacionEntrada = <?=json_encode($situacionEntrada)?>;
+        var usuario = <?=json_encode($usuario)?>;
+        var compannero = <?=json_encode($compannero)?>;
+        var rivalDer = <?=json_encode($rivalDer)?>;
+        var rivalIzq = <?=json_encode($rivalIzq)?>;
+        var cartas = <?=json_encode($cartas)?>;
+    </script>
+    <script src="http://localhost:3333/socket.io/socket.io.js"></script>
+    <script src="<?= $URL_PATH ?>/js/mesa.js"></script>
+</body>
+</html>
